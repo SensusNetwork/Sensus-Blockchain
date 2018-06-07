@@ -234,3 +234,22 @@ UniValue masternode(const UniValue& params, bool fHelp)
 
         return activeMasternode.GetStatus();
 }
+    
+     if(strCommand == "getcurrentvotes")
+    {
+        if (params.size() != 2 && params.size() != 4)
+            throw std::runtime_error(
+                "Correct usage is 'gobject getcurrentvotes <governance-hash> [txid vout_index]'"
+                );
+
+        // COLLECT PARAMETERS FROM USER
+
+        uint256 hash = ParseHashV(params[1], "Governance hash");
+
+        CTxIn mnCollateralOutpoint;
+        if (params.size() == 4) {
+            uint256 txid = ParseHashV(params[2], "Masternode Collateral hash");
+            std::string strVout = params[3].get_str();
+            uint32_t vout = boost::lexical_cast<uint32_t>(strVout);
+            mnCollateralOutpoint = CTxIn(txid, vout);
+}
