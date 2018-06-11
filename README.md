@@ -1,7 +1,4 @@
 # Sensus-Blockchain
-Sensus Distributed Network for Decentralized Governance .
-Token address:
-0x042dEb272F3540E24269ab0cA938ee6aD4A2239D
 
 ## Issuer's official website:
 http://www.sensusnetwork.io/
